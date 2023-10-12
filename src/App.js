@@ -8,16 +8,19 @@ function App() {
   const [name, setName] = useState('Antonio Marques'); // Define the state for 'name'
 
   // This function will change the state of 'name' based on its current value
-  const handleChangeName = () => setName(
+  const toggleName = () => setName(
     name === 'Antonio Marques' ? 'Mario Pollo' : 'Antonio Marques'
   );
 
   return (
     <div>
-      <p>Hello: {name}</p> {/* Interpolation to display the 'name' */}
 
-       {/* Render the Button component and pass the 'handleChangeName' function as a prop */}
-      <Button handleChangeName={handleChangeName} />
+      {/* Interpolation to display the 'name' */}
+      <p>Hello: {name}</p>
+
+       {/* Render the Button component and pass the 'toggleName' function as a prop */}
+      <Button toggleName={toggleName} name={name}/>
+
     </div>
   );
 }
